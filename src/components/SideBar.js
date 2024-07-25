@@ -1,18 +1,22 @@
 import React from 'react'
-import MenuItems from './MenuItems'
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const SideBar = () => {
+ const isMenuOpen =useSelector(Store => Store.app.isMenuOpen);
+ if (!isMenuOpen) return null;
   return (
-		<div className="grid-cols-1 m-1 p-1">
+		<div>
 			<ul>
-				<li className="mx-2 my-5">Home</li>
+				<Link to={"/"}>
+					<li className="mx-2 my-5">Home</li>
+				</Link>
 				<li className="mx-2 my-5">Shorts</li>
 				<li className="mx-2 my-5">Subscriptions</li>
 				<li className="mx-2 my-5">You</li>
 			</ul>
-			<MenuItems />
 		</div>
 	);
 }
 
-export default SideBar
+export default SideBar;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import { useDispatch } from 'react-redux';
 
@@ -6,10 +6,10 @@ import { toggleMenu } from './utils/AppSlice';
 
 const Head = () => {
 	const dispatch = useDispatch();
-	const toggleMenuHandler=()=>{
-		dispatch(toggleMenu())
-	}
-  return (
+	const toggleMenuHandler = () => {
+		dispatch(toggleMenu());
+	};
+	return (
 		<div className="grid grid-flow-col">
 			<div className="col-span-1 flex">
 				<img
@@ -24,10 +24,10 @@ const Head = () => {
 					alt="Youtube-logo"
 				/>
 			</div>
-			<div className="col-span-10 ml-[200px]">
+			<div className="col-span-10 flex items-center justify-center">
 				<input
-					className="border border-gray-400 rounded-l-full py-1 px-2 my-3 w-[600px]"
-          placeholder='Search'
+					className="border border-gray-400 rounded-l-full py-1 px-2 my-3 w-[600px] "
+					placeholder="Search"
 					type="text"
 				/>
 				<button
@@ -36,15 +36,15 @@ const Head = () => {
 					🔍
 				</button>
 			</div>
-			<div className="col-span-1">
+			<div className="col-span-1 flex justify-end ">
 				<img
-					className="w-10 h-10 my-1 ml-[300px] p-1 "
+					className="w-10 h-10 my-1 p-1 "
 					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtRs_rWILOMx5-v3aXwJu7LWUhnPceiKvvDg&s"
 					alt="User-icon"
 				/>
 			</div>
 		</div>
 	);
-}
+};
 
-export default Head
+export default Head;
