@@ -1,30 +1,30 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ButtonList = () => {
-  const ButtonList = [
+	const ButtonList = [
 		'All',
+		'Gaming',
+		'Live',
+		'Namaste JavaScript',
+		'IPL',
+		'Akshay Saini',
 		'Music',
-		
-		'JavaScript',
-		'HTML',
-		'TailwindCss',
+		'Sports',
+		'Virat Kohli',
+		'Comedy',
 		'React',
-		'All',
+		'Code with Harry',
 		'Music',
-		
-		'JavaScript',
-		'HTML',
-		'TailwindCss',
-		'React',
+		'Sports',
 	];
-  return (
+	return (
 		<div>
-			<ul className="flex">
-				{ButtonList.map((button) => {
+			<ul className="flex  ">
+				{ButtonList.map((button, index) => {
 					return (
-						<Link>
-							<li className="border border-gray-400 text-white bg-gray-400 rounded-lg px-3 mx-2 cursor-pointer">
+						<Link key={index}>
+							<li className="border border-gray-400 text-white bg-slate-600 rounded-lg px-3 mx-2 cursor-pointer">
 								{button}
 							</li>
 						</Link>
@@ -33,6 +33,6 @@ const ButtonList = () => {
 			</ul>
 		</div>
 	);
-}
+};
 
-export default ButtonList
+export default ButtonList;

@@ -8,19 +8,20 @@ import MainContainer from './components/MainContainer';
 import WatchPage from './components/WatchPage';
 
 const AppRouter = createBrowserRouter([
+	
 	{
 		path: '/',
 		element: <Body />,
 		children: [
 			{
-				path: "/",
-				element: <MainContainer/>
+				path: '/',
+				element: <MainContainer />,
 			},
 			{
-				path: "/watch",
-				element: <WatchPage/>
-			}
-		]
+				path: '/watch',
+				element: <WatchPage />,
+			},
+		],
 	},
 ]);
 function App() {
@@ -28,9 +29,7 @@ function App() {
 		<Provider store={Store}>
 			<div className="App">
 				<Head />
-				<RouterProvider router={AppRouter}>
-					<Body />
-				</RouterProvider>
+				<RouterProvider router={AppRouter}></RouterProvider>
 			</div>
 		</Provider>
 	);
