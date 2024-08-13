@@ -5,10 +5,10 @@ import Head from './components/Head';
 import Store from './components/utils/Store';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainContainer from './components/MainContainer';
-import WatchPage from './components/WatchPage';
-
+// import WatchPage from './components/WatchPage';
+import { lazy, Suspense } from 'react';
+const WatchPage = lazy(() => import('./components/WatchPage'));
 const AppRouter = createBrowserRouter([
-	
 	{
 		path: '/',
 		element: <Body />,
@@ -19,7 +19,11 @@ const AppRouter = createBrowserRouter([
 			},
 			{
 				path: '/watch',
-				element: <WatchPage />,
+				element: (
+					<Suspense fallback={<h1>Lazy loading....</h1>}>
+						<WatchPage />
+					</Suspense>
+				),
 			},
 		],
 	},
